@@ -405,11 +405,11 @@ y = 13
 z = 28 
 
 if (x < y and x < z): 
-    print("x is lowest")
+    print ("x is lowest")
 elif y < x and y < z: 
-    print("y is lowest ")
+    print ("y is lowest ")
 else: 
-    print("z is lowest")
+    print ("z is lowest")
 
 # TASK 18:
 # Create:
@@ -429,7 +429,7 @@ else:
 
 num1 = 10 
 num2 = 30
-mum3 = 20 
+num3 = 20 
 
 if (num1 > num2 and num1 < num3) or (num1 < num2 and num3 > num1):
     print("Middle:", num1)
@@ -505,7 +505,7 @@ third = 5
 
 if (first == second == third): 
     print("All are equal")
-elif (first == second or first == third or second == third): 
+elif (first == second and first != third) or (first == third and first != second) or (second == third and second != first): 
     print("Two are equal")
 else: 
     print("None are equal")
@@ -659,7 +659,7 @@ n1 = int(input("Enter a whole number:"))
 n2 = int(input("Enter a whole number:"))
 n3 = int(input("Enter a whole number:"))
 
-if (n1 > n2 and n2 > n3): 
+if (n1 < n2 and n2 < n3): 
     print("Increasing")
 else: 
     print("Not increasing")
@@ -685,7 +685,7 @@ n1 = int(input("Enter a whole number:"))
 n2 = int(input("Enter a whole number:"))
 n3 = int(input("Enter a whole number:"))
 
-if (n1 < n2 and n2 < n3): 
+if (n1 > n2 and n2 > n3): 
     print("Decreasing")
 else: 
     print("Not decreasing")
@@ -909,7 +909,21 @@ check_even_odd(13)
 # 65
 
 def ticket_type(age):
-    if (age >= )
+    if (age >= 65): 
+        print("Senior")
+    elif (age >= 18): 
+        print("Adult")
+    elif(age >= 13): 
+        print("Teen")
+    else: 
+        print("Child")
+
+ticket_type(12)
+ticket_type(13)
+ticket_type(17)
+ticket_type(18)
+ticket_type(64)
+ticket_type(65)
 
 # TASK 36:
 # Create a function named:
@@ -929,6 +943,17 @@ def ticket_type(age):
 # find_highest(100, 25, 60)
 # find_highest(8, 9, 30)
 
+def find_highest(a, b, c): 
+    if (a > b and a > c): 
+        print(a, "is the highest value")
+    elif (b > a and b > c): 
+        print(b, "is the highest value")
+    else: 
+        print(c, "is the highest value")
+
+find_highest(5, 20, 11)
+find_highest(100, 25, 60)
+find_highest(8, 9, 30)
 
 # TASK 37:
 # Create a function named:
@@ -945,6 +970,17 @@ def ticket_type(age):
 #
 # Test at least THREE times.
 
+def find_lowest(a, b, c): 
+    if (a < b and a < c): 
+        print(a, "is the lowest value")
+    elif (b < a and b < c): 
+        print(b, "is the lowest value")
+    else: 
+        print(c, "is the lowest value")
+
+find_lowest(5, 10, 20)
+find_lowest(5, 100, 20)
+find_lowest(20, 10, 0)
 
 # TASK 38:
 # Create a function named:
@@ -965,6 +1001,17 @@ def ticket_type(age):
 # find_middle(100, 5, 50)
 # find_middle(7, 9, 8)
 
+def find_middle(a, b, c): 
+    if (a > b and a < c) or (a < b and a > c): 
+        print (a)
+    elif (b > a and b < c) or (b < a and b > c): 
+        print (b)
+    else: 
+        print (c)
+
+find_middle(10, 30, 20)
+find_middle(100, 5, 50)
+find_middle(7, 9, 8)
 
 # TASK 39:
 # Create a function named:
@@ -984,6 +1031,18 @@ def ticket_type(age):
 # All different
 #
 # Test all three situations.
+
+def compare_three(a, b, c):
+    if (a == b == c): 
+        print("All equal")
+    elif (a == b and a != c) or (a == c and a != b)  or (b == c and c != a): 
+        print("Exactly two equal")
+    else: 
+        print("All different")
+
+compare_three(1, 1, 1)
+compare_three(1, 1, 0)
+compare_three(3, 5, 9)
 
 
 # TASK 40:
@@ -1015,6 +1074,18 @@ def ticket_type(age):
 # should still print:
 # In range
 
+def is_in_range(number, low, high):
+    if (high > low): 
+        if (number >= low and number <= high): 
+            print("In range")
+        else: 
+            print("Out of range")
+    else: 
+        if (number <= low and number >= high): 
+            print("In range")
+        else: 
+            print("Out of range")
+
 
 # ============================================================
 # SECTION 8 — RETURN VALUES
@@ -1040,6 +1111,11 @@ def ticket_type(age):
 #
 # Print multiplication_result.
 
+def multiply_numbers(num1, num2): 
+    return (num1 * num2)
+
+multiplication_result = multiply_numbers(6, 7)
+print (multiplication_result)
 
 # TASK 42:
 # Create a function named:
@@ -1063,6 +1139,14 @@ def ticket_type(age):
 #
 # Print bigger.
 
+def larger_number(a, b): 
+    if a > b: 
+        return a 
+    else: 
+        return b 
+
+bigger = larger_number(15, 40)
+print (bigger)
 
 # TASK 43:
 # Create a function named:
@@ -1085,6 +1169,15 @@ def ticket_type(age):
 #
 # Print highest_result.
 
+def highest_of_three(a, b, c): 
+    if (a > b and a > c): 
+        return a 
+    elif (b > a and b > c): 
+        return b 
+    else: 
+        return c 
+
+highest_result = highest_of_three(18, 42, 27)
 
 # TASK 44:
 # Create a function named:
@@ -1101,6 +1194,17 @@ def ticket_type(age):
 #
 # Test it at least THREE times.
 
+def lowest_of_three(a, b, c):
+    if (a < b and a < c):
+        return a 
+    elif (b < a and b < c):
+        return b
+    else: 
+        return c 
+
+lowest_of_three(1, 2, 3)
+lowest_of_three(1, 9, 2)
+lowest_of_three(3, 2, 7)
 
 # TASK 45:
 # Create a function named:
@@ -1122,6 +1226,17 @@ def ticket_type(age):
 # middle_of_three(50, 5, 25)
 # middle_of_three(8, 7, 9)
 
+def middle_of_three(a, b, c): 
+    if (a > b and a < c) or (a < b and a > c): 
+        return (a)
+    elif (b > a and b < c) or (b < a and b > c): 
+        return (b)
+    else: 
+        return (c)
+
+middle_of_three(10, 30, 20)
+middle_of_three(50, 5, 25)
+middle_of_three(8, 7, 9)
 
 # ============================================================
 # SECTION 9 — RETURN + REUSE
@@ -1162,6 +1277,27 @@ def ticket_type(age):
 # IMPORTANT:
 # Do NOT repeat the highest/lowest logic outside the functions.
 
+def get_highest(a, b, c): 
+    if (a > b and a > c): 
+        return a
+    elif (b > a and b > c):
+        return b
+    else: 
+        return  c
+    
+def get_lowest(a, b, c): 
+    if (a < b and b < c): 
+        return a 
+    elif (b < a and b < c): 
+        return b 
+    else: 
+        return c 
+
+
+highest = get_highest(30, 10, 20)
+lowest = get_lowest(30, 10, 20)
+difference = highest - lowest
+print(difference)
 
 # TASK 47:
 # Create:
@@ -1183,6 +1319,15 @@ def ticket_type(age):
 # or:
 # Small spread
 
+a = 9 
+b = 4 
+c = 15
+
+diff = get_highest(a, b, c) - get_lowest(a, b, c)
+if (diff > 10): 
+    print ("Large spread")
+else: 
+    print("Small spread")
 
 # TASK 48:
 # Create a function named:
@@ -1209,7 +1354,19 @@ def ticket_type(age):
 #
 # THINK:
 # How can one function call feed into another?
+a = 12 
+b = 50 
+c = 31
 
+def best_of_two(num1, num2):
+    if (num1 > num2): 
+        return num1
+    else: 
+        return num2
+
+best_of_two(a, b)
+highest = best_of_two(best_of_two(a, b), c) 
+print (highest)
 
 # TASK 49:
 # Create a function named:
@@ -1230,6 +1387,19 @@ def ticket_type(age):
 #
 # Print lowest.
 
+a = 22
+b = 5
+c = 17
+
+def worst_of_two(num1, num2): 
+    if num1 < num2: 
+        return num2
+    else: 
+        return num1
+
+worst_of_two(a,b)
+lowest = worst_of_two(worst_of_two(a,b), c)
+print (lowest)
 
 # ============================================================
 # SECTION 10 — LOGIC CHALLENGES
@@ -1252,6 +1422,14 @@ def ticket_type(age):
 #
 # Do NOT calculate the middle value separately first.
 
+a = 12
+b = 7
+c = 19
+
+if ( a > b and b > c) or (a < b and b < c): 
+    print ("b is the middle")
+else: 
+    print("b is not the middle")
 
 # TASK 51:
 # Create:
@@ -1268,6 +1446,16 @@ def ticket_type(age):
 # or:
 # Highest is unique
 
+a = 25
+b = 25
+c = 10
+
+if (a == b and b == c): 
+    print("Highest is tied")
+elif (a == b or b == c or a == c): 
+    print("Highest is tied")
+else: 
+    print("Highest is unique")
 
 # TASK 52:
 # Create:
@@ -1284,6 +1472,17 @@ def ticket_type(age):
 #
 # Print ONE result.
 
+a = 3
+b = 8
+c = 5
+
+if (a > b and b > c): 
+    result = ("Strictly decreasing")
+elif (a < b and b < c): 
+    result = ("Strictly increasing")
+else: 
+    result = ("Neither")
+print (result)
 
 # TASK 53:
 # Create:
@@ -1305,6 +1504,15 @@ def ticket_type(age):
 # Non-decreasing
 # OR
 # Not non-decreasing
+
+a = 5
+b = 5
+c = 10
+
+if (a < b and b < c):
+    result = ("Non-decreasing")
+else:
+    result = ("Non-decreasing")
 
 
 # TASK 54:
