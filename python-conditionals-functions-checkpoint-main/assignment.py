@@ -1538,6 +1538,14 @@ else:
 #
 # Read this one carefully.
 
+age = 17
+has_permission = True
+has_ticket = False
+
+if (age >= 18) or (age < 18 and has_permission == True and has_ticket == True): 
+    print("Entry allowed")
+else: 
+    print("Entry denied")
 
 # TASK 55:
 # Create:
@@ -1561,6 +1569,15 @@ else:
 #
 # Only ONE message should print.
 
+score = 18 
+attendance = 92 
+
+if (score >= 90 and attendance >= 90): 
+    print("Honors")
+elif (score  >= 70 and attendance >= 75): 
+    print("Pass")
+else: 
+    print("Fail")
 
 # ============================================================
 # SECTION 11 — DEBUGGING CHALLENGES
@@ -1580,6 +1597,11 @@ else:
 # if score >= 90:
 #     print("Excellent")
 
+score = 95 
+if score >= 90: 
+    print("Excellent")
+elif (score >= 70): 
+    print("Passing")
 
 # TASK 57:
 # The programmer wants 18 to count as Adult.
@@ -1593,6 +1615,11 @@ else:
 # else:
 #     print("Minor")
 
+age = 18
+if age >= 18:
+    print("Adult")
+else:
+   print("Minor")
 
 # TASK 58:
 # The programmer wants numbers from 10 through 20,
@@ -1609,6 +1636,11 @@ else:
 # else:
 #     print("Invalid")
 
+number = 20
+if number >= 10 and number <= 20:
+    print("Valid")
+else:
+    print("Invalid")
 
 # TASK 59:
 # The programmer wants the function to RETURN the answer.
@@ -1622,6 +1654,11 @@ else:
 # result = add_numbers(4, 6)
 # print(result)
 
+def add_numbers(a, b):
+    total = a + b
+    return total
+result = add_numbers(4, 6)
+print(result)
 
 # TASK 60:
 # Fix the function so the variable result works outside
@@ -1633,6 +1670,11 @@ else:
 # result = subtract(20, 8)
 # print(result)
 
+def subtract(a, b):
+    answer = a - b 
+    return answer
+result = subtract (20, 8)
+print(result)
 
 # ============================================================
 # FINAL BOSS 1 — THREE NUMBER ANALYZER
@@ -1680,7 +1722,52 @@ else:
 # analyze_three_numbers(5, 5, 9)
 # analyze_three_numbers(-5, 0, -12)
 
+def analyze_three_numbers (a, b, c): 
+# to see if the numbers are equal
+    if (a == b == c): 
+        equal = "All equal"
+    elif (a == b or a == c or b == c): 
+        equal = "Exactly two equal"
+    else: 
+        equal = "All different"
+    return equal
 
+# to see which number is highest 
+    if (a > b and a > c): 
+        highest = a 
+    elif (b > a and b > c): 
+        highest = b 
+    else: 
+        highest = c 
+    return highest 
+
+# to see which number is lowest
+    if (a < b and a < c): 
+        lowest = a 
+    elif (b < a and b < c):
+        lowest = b 
+    else: 
+        lowest = c 
+    return lowest 
+
+# to see which number is middle
+    if (a > b and a < c) or (a < b and a > c): 
+        middle = a 
+    elif (b > a and b < c) or (b < a and b > c): 
+        middle = b
+    else: 
+        midddle = c 
+    return middle 
+
+    print("Highest:",  highest)
+    print("Middle:", middle)
+    print("Lowest:", lowest)
+    print (equal)
+
+analyze_three_numbers(8, 3, 15)
+analyze_three_numbers(20, 20, 20)
+analyze_three_numbers(5, 5, 9)
+analyze_three_numbers(-5, 0, -12)
 # ============================================================
 # FINAL BOSS 2 — NUMBER RANKING
 # ============================================================
@@ -1714,6 +1801,34 @@ else:
 #
 # Your program must still work if the order of inputs changes.
 
+user_num1 = int(input("Enter a whole number: "))
+user_num2 = int(input("Enter a whole number: "))
+user_num3 = int(input("Enter a whole number: "))
+
+if (user_num1 > user_num2 and user_num1 > user_num3):
+    print(user_num1)
+    if (user_num2 > user_num3): 
+        print(user_num2)
+        print(user_num3)
+    else:
+        print(user_num3)
+        print(user_num2)
+elif (user_num2 > user_num1 and user_num2 > user_num3): 
+    print(user_num2)
+    if (user_num1 > user_num3): 
+        print(user_num1)
+        print(user_num3)
+    else: 
+        print(user_num3)
+        print(user_num1)
+else: 
+    print(user_num3)
+    if (user_num1 > user_nm2): 
+        print(user_num1)
+        print(user_num2)
+    else: 
+        print(user_num2)
+        print(user_num1)
 
 # ============================================================
 # FINAL BOSS 3 — FUNCTION REUSE
@@ -1752,7 +1867,24 @@ else:
 #
 # Do NOT use min(), max(), or sorting.
 
+def get_highest(a, b, c):
+    if
+def get_middle(a, b, c):
 
+def get_lowest(a, b, c):
+    if
+
+first = int(input("Enter a whole number: "))
+second = int(input("Enter a whole number: "))
+third = int(input("Enter a whole number: "))
+
+get_highest(first, second, third)
+get_middle(first, second, third)
+get_lowest(first, second, third)
+
+print("Highest: ", highest)
+print("Middle: ", middle)
+print("Lowest: ", lowest)
 # ============================================================
 # FINAL BOSS 4 — CONDITIONAL DECISION SYSTEM
 # ============================================================
