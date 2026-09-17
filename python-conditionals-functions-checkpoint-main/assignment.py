@@ -750,13 +750,18 @@ print()
 first_number = int(input("Input a number: "))
 second_number = int(input("Input a number: "))
 third_number = int(input("Input a number: "))
-if (first_number < second_number and first_number < third_number): 
-    print(first_number, "is the lowest number")
-elif (second_number < first_number and second_number < third_number): 
-    print(second_number, "is the lowest number")
+if (first_number > second_number): 
+    if (second_number > third_number): 
+        print(third_number, "is the lowest number")
+    else: 
+        print(second_number, "is the lowest number")
+elif (first_number > third_number): 
+    if (second_number > third_number): 
+        print(third_number, "is the lowest number")
+    else: 
+        print(second_number, "is the lowest number")
 else: 
-    print(third_number, "is the lowest number")
-
+    print(first_number, "is the lowest number")
 
 print() 
 print() 
@@ -778,9 +783,9 @@ value1 = int(input("Enter a whole number: "))
 value2 = int(input("Enter a whole number: "))
 value3 = int(input("Enter a whole number: "))
 
-if (value1 > value2 and value1 > value3): 
+if (value1 >= value2 and value1 >= value3): 
     print(value1, "is the highest number")
-elif (value2 > value1 and value2 > value3): 
+elif (value2 >= value1 and value2 >= value3): 
     print(value2, "is the highest number")
 else: 
     print(value3, "is the highest number")
@@ -912,7 +917,7 @@ print()
 # THINK:
 # You should not assign a letter grade to an invalid score.
 
-user_score = int(input("Input a score from 0 to 100"))
+user_score = int(input("Input a score from 0 to 100: "))
 if (user_score > 100 or user_score < 0): 
     print("Invalid score")
 elif (user_score >= 90): 
@@ -2098,32 +2103,35 @@ def analyze_three_numbers (a, b, c):
         equal = "All different"
 
 # to see which number is highest 
-    if (a > b and a > c): 
+    if (a >= b and a >= c): 
         highest = a 
-    elif (b > a and b > c): 
+    elif (b >= a and b >= c): 
         highest = b 
     else: 
         highest = c  
 
 # to see which number is lowest
-    if (a < b and a < c): 
+    if (a <= b and a <= c): 
         lowest = a 
-    elif (b < a and b < c):
+    elif (b <= a and b <= c):
         lowest = b 
     else: 
         lowest = c 
 
 # to see which number is middle
-    if (a > b and a < c) or (a < b and a > c): 
+    if (a >= b and a <= c) or (a <= b and a >= c): 
         middle = a 
-    elif (b > a and b < c) or (b < a and b > c): 
+    elif (b >= a and b <= c) or (b <= a and b >= c): 
         middle = b
     else: 
         middle = c 
 
     print("Highest:",  highest)
+    print()
     print("Middle:", middle)
+    print()
     print("Lowest:", lowest)
+    print()
     print (equal)
 
 analyze_three_numbers(8, 3, 15)
@@ -2394,6 +2402,7 @@ def tied(highest, a , b, c):
         tie = "Unique"
     return tie 
 
+print("Highest", highest)
 print(tied(highest, a, b, c), "highest")
 
 # ============================================================
